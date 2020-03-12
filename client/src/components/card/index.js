@@ -1,4 +1,5 @@
 import React from "react"
+import Form from "../form"
 
 export default function Card(props){
     return(
@@ -7,9 +8,9 @@ export default function Card(props){
     {props.userName}
   </div>
   <div className="card-body">
-    <input type="text" id="input1" className="form-control"></input>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
+      <Form />
+    <a href="#" className="btn btn-danger">Take a beer dude!</a>
+    <a href="#" className="btn btn-outline-danger">You better go!</a>
 
   </div>
   <div className="card-footer text-muted">
