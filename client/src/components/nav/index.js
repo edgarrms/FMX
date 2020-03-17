@@ -7,6 +7,7 @@ export default function Nav() {
             <div>
                 <h1><Link to="home">FMX</Link></h1>
                 <p>Fu*k My eX!</p></div>
+            <Link to="/profile">Profile </Link>
             <Link to="/signup">Sign Up</Link>
             <Link to="/signin">Sign In</Link>
         </div>
