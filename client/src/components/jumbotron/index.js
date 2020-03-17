@@ -1,14 +1,22 @@
-import React, { useEffect } from "react"
-import getJoke from "../../utils/jokes"
+import React, { useEffect, useState } from "react";
+import getJoke from "../../utils/jokes";
+// import { response } from "express";
 
 export default function jumbotron(){
+  const [joke, setJoke] = useState("");
   useEffect(()=>{
-console.log(getJoke());
+getJoke()
+    .then(response => {
+      const newJoke = response.data.setup + " - " + response.data.punchline;
+      setJoke(newJoke);
+    })
+    .catch(ex => console.log(ex));
   },[])
     return(
         <div className="jumbotron jumbotron-fluid">
-  <div class="container">
+  <div className="container">
     <h1 className="display-4">Daddy's Joke here!</h1>
+    <h3>{joke}</h3>
   </div>
 </div>
     )
