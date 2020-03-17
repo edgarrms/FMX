@@ -1,83 +1,91 @@
-import React, { Component } from "react";
-import "./index.css";
+import React, { Component } from 'react';
 
-class Form extends Component {
-    // Setting the component's initial state
-    state = {
-        firstName: "",
-        lastName: "",
-        password: ""
-    };
+class Register extends Component {
 
-    handleInputChange = event => {
-        // Getting the value and name of the input which triggered the change
-        let value = event.target.value;
-        const name = event.target.name;
-
-        if (name === "password") {
-            value = value.substring(0, 15);
+    constructor() {
+        super();
+        this.state = {
+            name: '',
+            email: '',
+            password: '',
+            password_confirm: '',
+            errors: {}
         }
-        // Updating the input's state
-        this.setState({
-            [name]: value
-        });
-    };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-    handleFormSubmit = event => {
-        // Preventing the default behavior of the form submit (which is to refresh the page)
-        event.preventDefault();
-        if (!this.state.firstName || !this.state.lastName) {
-            alert("Fill out your first and last name please!");
-        } else if (this.state.password.length < 6) {
-            alert(
-                `Choose a more secure password ${this.state.firstName} ${this.state
-                    .lastName}`
-            );
-        } else {
-            alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+    handleInputChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const user = {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+            password_confirm: this.state.password_confirm
         }
-
-        this.setState({
-            firstName: "",
-            lastName: "",
-            password: ""
-        });
-    };
+        console.log(user);
+    }
 
     render() {
-        // Notice how each input has a `value`, `name`, and `onChange` prop
         return (
-            <div>
-                <p>
-                    Hello {this.state.firstName} {this.state.lastName}
-                </p>
-                <form className="form">
-                    <input
-                        value={this.state.firstName}
-                        name="firstName"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="First Name"
-                    />
-                    <input
-                        value={this.state.lastName}
-                        name="lastName"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="Last Name"
-                    />
-                    <input
-                        value={this.state.password}
-                        name="password"
-                        onChange={this.handleInputChange}
-                        type="password"
-                        placeholder="Password"
-                    />
-                    <button onClick={this.handleFormSubmit}>Submit</button>
+            <div className="container" style={{ marginTop: '50px', width: '700px' }}>
+                <h2 style={{ marginBottom: '40px' }}>Registration</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            className="form-control"
+                            name="name"
+                            onChange={this.handleInputChange}
+                            value={this.state.name}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            className="form-control"
+                            name="email"
+                            onChange={this.handleInputChange}
+                            value={this.state.email}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            className="form-control"
+                            name="password"
+                            onChange={this.handleInputChange}
+                            value={this.state.password}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="password"
+                            placeholder="Confirm Password"
+                            className="form-control"
+                            name="password_confirm"
+                            onChange={this.handleInputChange}
+                            value={this.state.password_confirm}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <button type="submit" className="btn btn-primary">
+                            Register User
+                    </button>
+                    </div>
                 </form>
             </div>
-        );
+        )
     }
 }
 
-export default Form;
+export default Register;
