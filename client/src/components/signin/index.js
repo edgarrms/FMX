@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Link } from "react-router-dom";
 
 class Login extends Component {
 
@@ -54,9 +55,9 @@ class Login extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-primary">
-                            Login User
-                    </button>
+                        <button type="submit" className="btn btn-primary"><Link className="profile-link" to="/profile"> Login User</Link>
+
+                        </button>
                     </div>
                 </form>
             </div>
