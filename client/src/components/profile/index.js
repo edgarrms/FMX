@@ -19,14 +19,13 @@ function Profile() {
                             <div class="profile-usertitle-name">
                                 Its ya boi
                             </div>
-                            <div class="profile-usertitle-job">
-                                Developer
-                            </div>
+                            
                         </div>
 
                         <div class="profile-userbuttons">
-                            <button type="button" class="btn btn-success btn-sm">Follow</button>
-                            <button type="button" class="btn btn-danger btn-sm">Message</button>
+                            <img-upload>
+                            
+                            </img-upload>
                         </div>
 
                         <div class="profile-usermenu">
@@ -58,25 +57,20 @@ function Profile() {
                 </div>
                 <div class="col-md-9">
                     <div class="profile-content">
-                        Some user related content goes here...
+                      
+                        
                     </div>
                 </div>
             </div>
         </div>
 
 
-
-
-
-
-
-
-
-
-
     );
 }
 
-
 export default Profile
+
+
+
+
 
