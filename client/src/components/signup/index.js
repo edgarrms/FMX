@@ -81,7 +81,8 @@ class Register extends Component {
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary">
                             <div ><Link className="sign-in-link" to="/signin">Register User</Link></div>
-
+                            {/* when submit is pressed, the user's info should go into the mongo data base.  */}
+                            {/* The users info will be stored and used later in order to allow the user to sign in, through athentication */}
                         </button>
                     </div>
                 </form>
