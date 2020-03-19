@@ -7,7 +7,7 @@ export default function getJoke() {
   headers:{
   "content-type":"application/octet-stream",
   "x-rapidapi-host":"dad-jokes.p.rapidapi.com",
-  // "x-rapidapi-key":"4d4476a817msh7d7a0835c290b4bp1e5ddbjsncb1087971f09"
+  "x-rapidapi-key":"4d4476a817msh7d7a0835c290b4bp1e5ddbjsncb1087971f09"
   }
   });
 
