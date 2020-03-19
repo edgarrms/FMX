@@ -56,7 +56,8 @@ class Login extends Component {
                     </div>
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary"><Link className="profile-link" to="/profile"> Login User</Link>
-
+                            {/* When submit is pressed, the users info(email/password) should send a request to our database for athentication */}
+                            {/* if the user has made an account, by pressing submit the user should be directed to the profile page */}
                         </button>
                     </div>
                 </form>
