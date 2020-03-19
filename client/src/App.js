@@ -6,6 +6,7 @@ import './App.css';
 import SignUp from "./components/signup"
 import SignIn from "./components/signin"
 import Profile from "./components/profile/index.js";
+import Counter from "./components/card/counter"
 function App() {
   return (
     <Router>
@@ -26,7 +27,8 @@ function App() {
           </Route>
 
           <Route path="/">
-            <Home />
+            <Home/>
+            
           </Route>
         </Switch>
       </div>

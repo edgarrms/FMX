@@ -10,13 +10,14 @@ export default function Card(props) {
       </div>
       <div className="card-body">
         <Form />
-        <a href="#" className="btn btn-danger">Take a beer dude!</a>
-        <a href="#" className="btn btn-outline-danger">You better go!</a>
+        <button className="btn btn-danger" onClick={props.handleIncrement}><a className="card-text">Take a beer dude! {props.count}</a></button>
+        <a>  </a>
+        <button className="btn btn-outline-danger" onClick={props.handleIncrement2}>You better leave! {props.count}</button>
 
       </div>
       <div className="card-footer text-muted">
         2 days ago
-  </div>
+      </div>
     </div>
   )
 }

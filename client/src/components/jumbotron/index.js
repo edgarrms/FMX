@@ -15,7 +15,7 @@ getJoke()
     return(
         <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="display-4">Daddy's Joke here!</h1>
+    <h1 className="display-4">Daddy's joke today!</h1>
     <h3>{joke}</h3>
   </div>
 </div>
